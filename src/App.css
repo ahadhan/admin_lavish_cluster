@@ -1,0 +1,269 @@
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/LibreBaskerville-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./fonts/LibreBaskerville-Bold.ttf') format('truetype');
+}
+
+
+body {
+  @apply font-poppins;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.container{
+  max-width: 93vw;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* styles/globals.css */
+
+/* Keyframes for rotating the entire circle */
+
+/* Gradient from top to bottom */
+.bg-gradient-top-to-bottom {
+  background: linear-gradient(to bottom, #000000, #010203);
+}
+
+/* Gradient from bottom to top */
+.bg-gradient-bottom-to-top {
+  background: linear-gradient(to top, #000000, #010203);
+}
+
+
+
+/* Make sure the content is visible over the parallax background */
+.content {
+  position: relative;
+  z-index: 10; /* Keeps the content above the background */
+}
+
+/* General container styling */
+.container {
+  max-width: 93vw;
+}
+
+
+
+.font-bold {
+  font-weight: bold;
+}
+
+
+/* Utility for hiding scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Styling for Carousel */
+.carousel {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */ 
+}
+
+.carousel-image {
+  flex: 1;
+  text-align: center;
+}
+
+.carousel button {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.text-shadow-xl {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Marquee container */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Marquee content */
+.marquee-content {
+  display:flex  ;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite; /* Move content continuously */
+}
+
+.social-link {
+  margin: 0 15px;
+  /* color: #ffffff; */
+  /* color: gray; */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;  
+  align-items: center;
+  gap: 20px;
+  transition-duration: 300ms;
+}
+
+.social-link:hover {
+  color: #1DA1F2; 
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 1.5rem; /* Adjust icon size */
+}
+
+/* Keyframes for the scrolling effect */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start outside the right edge */
+  }
+  100% {
+    transform: translateX(-100%); /* Move completely to the left */
+  }
+}
+
+
+.parallax-background {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
