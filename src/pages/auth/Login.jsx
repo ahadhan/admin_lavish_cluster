@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext  } from "react";
 import { useNavigate } from "react-router-dom"; // React Router for navigation
 import image from "../../assets/Aj.webp";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -6,26 +6,23 @@ import { auth } from "../../lib/firebase"; // Adjust the path to your Firebase c
 import { IoMdArrowRoundBack } from "react-icons/io";
 import '../../App.css'
 import '../../index.css'
+import { AuthContext } from "../../context/AuthContext";
+
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const { setIsLogin } = useContext(AuthContext);
 
+    
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             console.log("Logged in:", userCredential.user);
-
-            // Get the user's ID token
-            const idToken = await userCredential.user.getIdToken();
-
-            // Store the token in a cookie (for server-side validation)
-            document.cookie = `token=${idToken}; path=/; secure; HttpOnly`;
-
-            // Redirect to the admin dashboard
+            setIsLogin(true); // Set login state to true
             navigate("/admin/dashboard");
         } catch (error) {
             console.error("Error logging in:", error);

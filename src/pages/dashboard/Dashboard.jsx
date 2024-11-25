@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import { BrowserRouter as Router, Route, useNavigate } from "react-router-dom"; // React Router for navigation
 import MainContent from "../../components/MainContent";
 import OrdersSection from "../../components/OrdersTable";
@@ -18,6 +19,8 @@ import "../../App.css"
 
 const DashboardLayout = () => {
   const [currentSection, setCurrentSection] = useState("Dashboard");
+  const { isLogin } = useContext(AuthContext);
+
 
   const ordersData = [
     {
@@ -69,6 +72,14 @@ const DashboardLayout = () => {
         return <MainContent />;
     }
   };
+
+  if (!isLogin) {
+    return (
+      <div className="flex w-[100vw] items-center justify-center min-h-screen bg-black text-white">
+        <h1>You must log in first.</h1>
+      </div>
+    );
+  }
 
   return (
     
