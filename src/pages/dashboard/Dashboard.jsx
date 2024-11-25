@@ -5,6 +5,7 @@ import OrdersSection from "../../components/OrdersTable";
 import ProductsTable from "../../components/ProductsTable";
 import CreateProduct from "../../components/CreateProduct";
 import Sidebar from "../../components/Sidebar";
+
 import Header from "../../components/Header";
 import AboutSection from "../../components/AboutContent";
 import HeroData from "../../components/HeroData";
@@ -71,7 +72,7 @@ const DashboardLayout = () => {
 
   return (
     
-      <div className="flex p-2 bg-black">
+      <div className="flex p-2 bg-black w-[100vw]">
         <Sidebar onSectionChange={setCurrentSection} />
         <div className="flex-1">
           <Header sectionName={currentSection} />

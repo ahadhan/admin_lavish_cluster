@@ -49,7 +49,7 @@ export default function Sidebar({ onSectionChange }) {
         <div className="flex items-center mb-8">
           <button
             onClick={() => navigate.push("/")}
-            className="mr-4 text-white"
+            className="mr-2 text-white bg-black"
           >
             <IoMdArrowBack size={24} />
           </button>
@@ -65,11 +65,11 @@ export default function Sidebar({ onSectionChange }) {
         </div>
 
         {/* Navigation with Dropdown Items */}
-        <nav className="space-y-4">
+        <nav className="space-y-4 ">
           {/* Product Section */}
           <div>
             <button
-              className="flex justify-between w-full py-2 px-4 text-left rounded hover:bg-gray-700 items-center font-roboto"
+              className="flex justify-between w-full py-2 px-4 text-left rounded bg-black hover:bg-gray-900 items-center font-roboto"
               onClick={() => {
                 toggleDropdown(0);
                 handleSectionChange("Product Section");
@@ -81,14 +81,14 @@ export default function Sidebar({ onSectionChange }) {
             {openDropdown === 0 && (
               <div className="pl-4 space-y-1">
                 <button
-                  className="block py-1 px-2 hover:bg-gray-700 rounded"
+                  className="block py-1 px-2 bg-black hover:bg-gray-700 rounded"
                   onClick={() => handleSectionChange("Create Product")}
                 >
                   Create Product
                 </button>
                 <button
                   onClick={() => onSectionChange("List Of Products")}
-                  className="block py-1 px-2 hover:bg-gray-700 rounded text-left w-full"
+                  className="block py-1 px-2 bg-black hover:bg-gray-700 rounded text-left w-full"
                 >
                   List of Products
                 </button>
@@ -99,7 +99,7 @@ export default function Sidebar({ onSectionChange }) {
           {/* Content Section */}
           <div>
             <button
-              className="flex justify-between w-full py-2 px-4 text-left rounded hover:bg-gray-700 items-center"
+              className="flex justify-between bg-black w-full py-2 px-4 text-left rounded hover:bg-gray-700 items-center"
               onClick={() => {
                 toggleDropdown(1);
                 handleSectionChange("Content Section");
@@ -112,37 +112,37 @@ export default function Sidebar({ onSectionChange }) {
               <div className="pl-4 space-y-1">
                 <button
                   onClick={() => handleSectionChange("Hero Section")}
-                  className="block py-1 px-2 hover:bg-gray-700 rounded"
+                  className="block py-1 px-2 bg-black hover:bg-gray-700 rounded"
                 >
                   Hero
                 </button>
                 <button
                   onClick={() => handleSectionChange("About Section")}
-                  className="block py-1 px-2 hover:bg-gray-700 rounded"
+                  className="block py-1 px-2 bg-black hover:bg-gray-700 rounded"
                 >
                   About
                 </button>
                 <button
                   onClick={() => handleSectionChange("How It Works")}
-                  className="block py-1 px-2 hover:bg-gray-700 rounded"
+                  className="block py-1 px-2 bg-black hover:bg-gray-700 rounded"
                 >
                   Video Guidelines
                 </button>
                 <button
                   onClick={() => handleSectionChange("Bundle Options")}
-                  className="block py-1 px-2 hover:bg-gray-700 rounded"
+                  className="block py-1 px-2 bg-black hover:bg-gray-700 rounded"
                 >
                   Bundle Options
                 </button>
                 <button
                   onClick={() => handleSectionChange("Client Testimonials")}
-                  className="block py-1 px-2 hover:bg-gray-700 rounded"
+                  className="block py-1 px-2 bg-black hover:bg-gray-700 rounded"
                 >
                   Client Testimonials
                 </button>
                 <button
                   onClick={() => handleSectionChange("FAQ's")}
-                  className="block py-1 px-2 hover:bg-gray-700 rounded"
+                  className="block py-1 px-2 bg-black hover:bg-gray-700 rounded"
                 >
                   FAQ's
                 </button>
@@ -151,8 +151,8 @@ export default function Sidebar({ onSectionChange }) {
           </div>
 
           {/* Orders Section */}
-          <button
-            className="flex justify-between w-full py-2 px-4 text-left rounded hover:bg-gray-700"
+          <button 
+            className="flex justify-between w-full py-2 px-4 text-left rounded bg-black hover:bg-gray-700"
             onClick={() => {
               onSectionChange("Orders");
             }}

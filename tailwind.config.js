@@ -1,12 +1,11 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'],
+  darkMode: ['class'], // Enable dark mode with 'class' strategy
   content: [
-  './pages/**/*.{js,ts,jsx,tsx}',
-  './components/**/*.{js,ts,jsx,tsx}',
-  './app/**/*.{js,ts,jsx,tsx}', // if you are using the `/app` directory
-],
+    './index.html',               // Include the main HTML file
+    './src/**/*.{js,ts,jsx,tsx}', // Scan all files in the src directory for Tailwind classes
+  ],
 theme: {
   extend: {
     colors: {
@@ -70,7 +69,7 @@ theme: {
   }
 },
 plugins: [
-  function ({ addUtilities }) {
+  function ({ addUtilities }) { 
     const newUtilities = {
       '.text-shadow-light-white': {
         textShadow: '1px 1px 2px rgba(255, 255, 255, 0.6)', // Define light white shadow

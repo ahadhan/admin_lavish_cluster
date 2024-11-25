@@ -4,6 +4,8 @@ import image from "../../assets/Aj.webp";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../lib/firebase"; // Adjust the path to your Firebase configuration file
 import { IoMdArrowRoundBack } from "react-icons/io";
+import '../../App.css'
+import '../../index.css'
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
@@ -36,20 +38,22 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-black text-white">
+        <div className="flex w-[100vw] items-center justify-center min-h-screen bg-black text-white">
             {/* Left Column - Login Form */}
-            <div className="w-[80%] h-auto flex basis-2/3 items-center justify-center p-8 rounded-lg border border-gray-500">
-                <div className="w-full max-w-md h-[500px] p-10 flex flex-col basis-1/2 bg-black">
-                    <span className="back-btn text-2xl" onClick={handleGoBack}>
-                        <IoMdArrowRoundBack />
-                    </span>
+            <div className="  w-[80%] h-auto flex basis-2/3 items-center justify-center p-8 rounded-lg border border-gray-500">
+                <div className=" w-full max-w-md h-[500px] p-10 flex flex-col basis-1/2 bg-black ">
+                    <div className=" flex gap-4 ">
+                        <span className="back-btn text-2xl" onClick={handleGoBack}>
+                            <IoMdArrowRoundBack />
+                        </span>
 
-                    <h2 className="text-3xl font-poppins font-bold mb-6 text-center">
-                        ADMIN LOGIN
-                    </h2>
+                        <h2 className="text-3xl font-poppins font-bold mb-6 text-center">
+                            ADMIN LOGIN
+                        </h2>
+                    </div>
                     <form onSubmit={handleLogin} className="space-y-12">
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium mb-10">
+                            <label htmlFor="email" className="block text-sm font-medium ">
                                 Email
                             </label>
                             <input

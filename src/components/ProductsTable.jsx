@@ -26,7 +26,7 @@ const ProductsTable = ({ products }) => {
         </thead>
         <tbody>
           {products.map((product, index) => (
-            <tr key={index} className="border-b border-gray-700 text-white">
+            <tr key={index} className="border-2 border-gray-700 text-white">
               <td className="py-3 px-6">{product.title}</td>
               <td className="py-3 px-6">{product.description}</td>
               <td className="py-3 px-6">${product.price.toFixed(2)}</td>

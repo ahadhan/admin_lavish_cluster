@@ -1,4 +1,9 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @font-face {
   font-family: 'Poppins';
   font-weight: 400;
@@ -71,7 +76,6 @@ body, html {
 .bg-gradient-bottom-to-top {
   background: linear-gradient(to top, #000000, #010203);
 }
-
 
 
 /* Make sure the content is visible over the parallax background */
