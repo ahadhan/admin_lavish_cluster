@@ -23,7 +23,7 @@ const LoginPage = () => {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             console.log("Logged in:", userCredential.user);
             setIsLogin(true); // Set login state to true
-            navigate("/admin/dashboard");
+            navigate("/dashboard");
         } catch (error) {
             console.error("Error logging in:", error);
             setError("Invalid email or password");
