@@ -35,25 +35,22 @@ export default function Sidebar({ onSectionChange }) {
     try {
       await signOut(auth);
       console.log("User logged out successfully");
+      // Clear any other session or cookie-related data if necessary
       document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-      navigate.push("/login"); // Navigate to login page
+      navigate("/login"); // Navigate to the login page
     } catch (error) {
       console.error("Error logging out:", error);
     }
   };
+  
 
   return (
     <aside className="w-64 min-h-screen p-6 bg-black rounded-md border-2 border-white text-white flex flex-col justify-between">
       {/* Admin Panel Heading */}
       <div className="h-full">
-        <div className="flex items-center mb-8">
-          <button
-            onClick={() => navigate.push("/")}
-            className="mr-2 text-white bg-black"
-          >
-            <IoMdArrowBack size={24} />
-          </button>
-          <h2 className="text-2xl font-semibold font-roboto">Admin Panel</h2>
+        <div className="mb-8">
+          
+          <h2 className="text-2xl font-semibold font-roboto text-center">Admin Panel</h2>
         </div>
 
         {/* Profile Section */}

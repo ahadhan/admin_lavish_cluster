@@ -73,13 +73,13 @@ const DashboardLayout = () => {
     }
   };
 
-  if (!isLogin) {
-    return (
-      <div className="flex w-[100vw] items-center justify-center min-h-screen bg-black text-white">
-        <h1>You must log in first.</h1>
-      </div>
-    );
-  }
+  // if (!isLogin) {
+  //   return (
+  //     <div className="flex w-[100vw] items-center justify-center min-h-screen bg-black text-white">
+  //       <h1>You must log in first.</h1>
+  //     </div>
+  //   );
+  // }
 
   return (
     

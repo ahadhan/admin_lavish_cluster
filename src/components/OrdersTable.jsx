@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { db } from "../lib/firebase"; // Import your Firebase configuration
 
-const OrdersTable = ({ ordersData }) => {
+const OrdersTable = () => {
+  const [ordersData, setOrdersData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
+  useEffect(() => {
+    // Fetch orders data from Firestore
+    const fetchOrdersData = async () => {
+      try {
+        const ordersSnapshot = await db.collection("orders").get();
+        const orders = ordersSnapshot.docs.map((doc) => doc.data());
+        setOrdersData(orders); // Set orders data to state
+      } catch (error) {
+        console.error("Error fetching orders: ", error);
+      }
+    };
+
+    fetchOrdersData(); // Fetch orders on component mount
+  }, []); // Empty array ensures this runs once when the component mounts
+
   // Filter orders based on filter status and search term
   const filteredOrders = ordersData.filter((order) => {
     const matchesStatus =
-      filterStatus === "All" || order.status.toLowerCase() === filterStatus.toLowerCase();
+      filterStatus === "All" || order.orderStatus.toLowerCase() === filterStatus.toLowerCase();
     const matchesSearch =
       order.orderId.toLowerCase().includes(searchTerm.toLowerCase()) ||
       order.bookerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -83,14 +100,14 @@ const OrdersTable = ({ ordersData }) => {
               <td className="p-2 border-b border-gray-200 text-white">{order.paymentMethod}</td>
               <td
                 className={`p-2 border-b border-gray-200 ${
-                  order.status === "Successful"
+                  order.orderStatus === "Successful"
                     ? "text-green-600"
-                    : order.status === "Pending"
+                    : order.orderStatus === "Pending"
                     ? "text-yellow-600"
                     : "text-red-600"
                 }`}
               >
-                {order.status}
+                {order.orderStatus}
               </td>
             </tr>
           ))}

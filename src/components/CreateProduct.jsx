@@ -28,8 +28,28 @@ const CreateProduct = () => {
     setImageFiles([...e.target.files]);
   };
 
+   // Handle multiple product images upload
+   const handleProductImagesChange = (e) => {
+    const files = Array.from(e.target.files);
+    files.forEach((file) => {
+      // Upload each file to Cloudinary or other service
+      uploadToCloudinary(file, 'productImages');
+    });
+  };
+
+
+  // Handle file input change for thumbnail image
+  const handleThumbnailImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Upload to Cloudinary or other service here
+      const thumbnailImg = uploadToCloudinary(file, 'thumbnail');
+      setProductData(thumbnailImg)
+    }
+  };
+
   // Upload a single file to Cloudinary
-  const uploadToCloudinary = async (file) => {
+  const uploadToCloudinary = async (file, ) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", "lavish_cluster"); // Cloudinary upload preset
@@ -189,6 +209,18 @@ const CreateProduct = () => {
           />
         </div>
 
+        <div>
+        <label>Thumbnail Image</label>
+        <input
+          type="file"
+          onChange={handleThumbnailImageChange}
+          accept="image/*"
+          required
+          className="mt-1 p-2 w-full bg-gray-700 text-white rounded"
+
+        />
+      </div>
+
         {/* Images */}
         <div>
           <label htmlFor="images" className="block text-sm font-medium">
@@ -200,7 +232,8 @@ const CreateProduct = () => {
             accept="image/*"
             onChange={handleImageChange}
             multiple
-            className="mt-1 w-full text-white bg-gray-700"
+            className="mt-1 p-2 w-full bg-gray-700 text-white rounded"
+
           />
           {imageFiles.length > 0 && (
             <p className="mt-2 text-sm text-gray-400">
@@ -208,6 +241,21 @@ const CreateProduct = () => {
             </p>
           )}
         </div>
+
+
+        <div>
+        <label>SKU</label>
+        <input
+          type="text"
+          name="sku"
+          value={productData.sku}
+          onChange={handleChange}
+          className="mt-1 p-2 w-full bg-gray-700 text-white rounded"
+
+        />
+
+      </div>
+
 
         {/* Submit Button */}
         <button

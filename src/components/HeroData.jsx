@@ -231,7 +231,7 @@ const AdminHeroSection = () => {
         productImages.map((img) => (img.file ? uploadImageToCloudinary(img.file) : img.src))
       );
 
-      await setDoc(doc(db, "heroSection", "content"), {
+      await setDoc(doc(db, "content", "heroSection"), {
         logo: logoUrl,
         heading,
         subheading,
