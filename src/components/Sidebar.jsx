@@ -45,7 +45,7 @@ export default function Sidebar({ onSectionChange }) {
   
 
   return (
-    <aside className="w-64 min-h-screen p-6 bg-black rounded-md border-2 border-white text-white flex flex-col justify-between">
+    <aside className="md:w-64 w-100 min-h-screen p-6 bg-black rounded-md border-2 border-white text-white flex flex-col justify-between">
       {/* Admin Panel Heading */}
       <div className="h-full">
         <div className="mb-8">

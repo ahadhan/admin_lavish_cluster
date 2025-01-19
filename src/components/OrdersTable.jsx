@@ -50,12 +50,12 @@ const OrdersTable = () => {
   };
 
   return (
-    <div className="p-6 mx-5 bg-black border-2 rounded-md shadow-md">
+    <div className="overflow-x-auto p-6 mx-5  bg-black border-2 rounded-md shadow-md">
       {/* Heading */}
       <h2 className="text-2xl font-semibold mb-4 text-white">Orders</h2>
 
       {/* Search and Filter Controls */}
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-4 ">
         {/* Search Box */}
         <input
           type="text"
@@ -79,7 +79,7 @@ const OrdersTable = () => {
       </div>
 
       {/* Orders Table */}
-      <table className="w-full border border-gray-200">
+      <table className="w-full border border-gray-200 table-auto ">
         <thead>
           <tr className="bg-gray-100 text-left">
             <th className="p-2 border-b border-gray-200">Order ID</th>

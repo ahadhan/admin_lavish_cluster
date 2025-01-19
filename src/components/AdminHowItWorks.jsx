@@ -88,8 +88,8 @@ const AdminHowItWorks = () => {
   if (loading) return <p>Loading admin panel...</p>;
 
   return (
-    <div className="p-6 bg-black min-h-screen flex flex-col gap-8">
-      <div className="bg-black border-2 border-white p-6 rounded-md shadow-md w-[80%] mx-auto space-y-6">
+    <div className="p-2 bg-black min-h-screen flex flex-col gap-8">
+      <div className="bg-black border-2 border-white p-6 rounded-md shadow-md w-full mx-auto space-y-6">
         <h2 className="text-3xl font-semibold text-white">Manage How It Works Section</h2>
 
         {/* Heading */}
@@ -120,7 +120,8 @@ const AdminHowItWorks = () => {
 
         {/* Videos List */}
         <h3 className="text-xl text-gray-300">Videos</h3>
-        <table className="w-full text-gray-300 border-collapse border border-gray-700">
+        <div className=' overflow-x-auto '>
+        <table className="  min-w-full table-auto  text-gray-300 border-collapse border border-gray-700">
           <thead>
             <tr className="bg-gray-700 text-left">
               <th className="p-2 border border-gray-600">Title</th>
@@ -130,8 +131,8 @@ const AdminHowItWorks = () => {
           </thead>
           <tbody>
             {howItWorksData.videos.map((video, index) => (
-              <tr key={video.id} className="hover:bg-gray-700">
-                <td className="p-2 border border-gray-600">{video.title}</td>
+              <tr key={video.id} className="md:text-xl text-sm">
+                <td className="p-2  border border-gray-600">{video.title}</td>
                 <td className="p-2 border border-gray-600">{video.videoSrc}</td>
                 <td className="p-2 border border-gray-600 flex gap-2">
                   <button
@@ -154,6 +155,7 @@ const AdminHowItWorks = () => {
             ))}
           </tbody>
         </table>
+        </div>
 
         {/* Add/Edit Video Form */}
         <div className="space-y-4">

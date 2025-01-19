@@ -83,7 +83,7 @@ const DashboardLayout = () => {
 
   return (
     
-      <div className="flex p-2 bg-black w-[100vw]">
+      <div className="flex md:flex-row flex-col p-2 bg-black w-[100vw]"> 
         <Sidebar onSectionChange={setCurrentSection} />
         <div className="flex-1">
           <Header sectionName={currentSection} />

@@ -577,19 +577,23 @@ const AdminBundleOptions = () => {
   };
 
   return (
-    <div className="text-white ">
-      <h1>Admin - Bundle Options</h1>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <div>
-          <label>Heading:</label>
-          <input type="text" className="text-black" value={heading} onChange={handleHeadingChange} required />
+    <div className="text-white border-2 border-white p-4 mx-4 rounded-md">
+      {/* <h1 className="text-center my-5">Admin - Bundle Options</h1> */}
+      <form onSubmit={(e) => e.preventDefault()} className="space-y-4 mt-8">
+        <div className="space-y-4">
+          <label className="text-gray-300">Heading:</label>
+          <input type="text"
+            className="w-full border border-gray-700 p-2 rounded-md bg-gray-700 text-white"
+            value={heading} onChange={handleHeadingChange} required />
         </div>
-        <div>
-          <label>Subheading:</label>
-          <input type="text" value={subheading} className="text-black" onChange={handleSubheadingChange} required />
+        <div className="space-y-4">
+          <label className="text-gray-300">Subheading:</label>
+          <input type="text" value={subheading}
+            className="w-full border border-gray-700 p-2 rounded-md bg-gray-700 text-white"
+            onChange={handleSubheadingChange} required />
         </div>
-        <div className="text-black"> 
-          <label className="text-white">Points:</label>
+        <div className="space-y-4">
+          <label className="text-gray-300">Points:</label>
           {points.map((point, index) => (
             <input
               key={index}
@@ -597,20 +601,21 @@ const AdminBundleOptions = () => {
               value={point}
               onChange={(e) => handlePointsChange(index, e.target.value)}
               required
+              className="w-full border border-gray-700 p-2 rounded-md bg-gray-700 text-white"
             />
           ))}
-          <button type="button" onClick={handleAddPoint}>Add Point</button>
+          <button type="button" className="text-gray-900" onClick={handleAddPoint}>Add Point</button>
         </div>
-        <div>
-          <label>Large Image:</label>
+        <div className="space-y-4">
+          <label className="mx-4">Large Image:</label>
           <input type="file" accept="image/*" onChange={(e) => handleImageChange(e, "largeImage")} required />
         </div>
         <div>
-          <label>Parallax Image:</label>
+          <label className="mx-4">Parallax Image:</label>
           <input type="file" accept="image/*" onChange={(e) => handleImageChange(e, "parallaxImage")} />
         </div>
         <div>
-          <label>Small Images (Gallery):</label>
+          <label className="mx-4">Small Images (Select Multiple):</label>
           <input type="file" accept="image/*" multiple onChange={(e) => handleImageChange(e, "smallImages")} />
         </div>
         <button type="button" className="text-black" onClick={handleSaveData}>Save Bundle Data</button>

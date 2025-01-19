@@ -166,7 +166,7 @@ const AdminAboutSection = ({ initialContent = {} }) => {
 
 
   return (
-    <div className="m-8 p-8 border-2 border-white rounded-md">
+    <div className=" overflow-x-auto m-8 p-8 border-2 border-white rounded-md">
       <div className="imageInputs my-8 space-y-3">
 
       <div className="space-y-4">

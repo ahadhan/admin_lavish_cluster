@@ -14,7 +14,7 @@ const ProductsTable = ({ products }) => {
   return (
     <div className="overflow-x-auto mx-5 p-6 bg-black border border-white rounded-lg shadow-lg">
       <h2 className="text-2xl font-semibold text-white mb-4">Product List</h2>
-      <table className="min-w-full bg-black">
+      <table className="min-w-full table-auto bg-black">
         <thead>
           <tr>
             <th className="py-3 px-6 bg-gray-100">Title</th>

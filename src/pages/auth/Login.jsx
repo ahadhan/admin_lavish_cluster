@@ -37,14 +37,11 @@ const LoginPage = () => {
     return (
         <div className="flex w-[100vw] items-center justify-center min-h-screen bg-black text-white">
             {/* Left Column - Login Form */}
-            <div className="  w-[80%] h-auto flex basis-2/3 items-center justify-center p-8 rounded-lg border border-gray-500">
-                <div className=" w-full max-w-md h-[500px] p-10 flex flex-col basis-1/2 bg-black ">
-                    <div className=" flex gap-4 ">
-                        <span className="back-btn text-2xl" onClick={handleGoBack}>
-                            <IoMdArrowRoundBack />
-                        </span>
+            <div className=" md:w-[50%] h-auto  flex basis-1/3 gap-5 items-center justify-center p-8  rounded-lg border border-gray-500">
+                <div className=" w-full  flex flex-col    bg-black ">
+                    <div className=" flex gap-4 items-center mb-4 justify-center">
 
-                        <h2 className="text-3xl font-poppins font-bold mb-6 text-center">
+                        <h2 className="text-lg font-poppins font-bold md:text-2xl text-center">
                             ADMIN LOGIN
                         </h2>
                     </div>
@@ -84,14 +81,14 @@ const LoginPage = () => {
                 </div>
 
                 {/* Right Column - Image */}
-                <div className="hidden lg:flex h-[500px] items-center basis-1/2 justify-center">
+                {/* <div className="hidden lg:flex h-[500px] items-center basis-1/2 justify-center">
                     <img
                         src={image}
                         alt="Lavish Clusters Founder"
                         style={{ objectFit: "cover", objectPosition: "top", height: "500px" }}
                         className="w-[]"
                     />
-                </div>
+                </div> */}
             </div>
         </div>
     );
